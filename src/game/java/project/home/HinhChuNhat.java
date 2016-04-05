@@ -34,6 +34,7 @@ public class HinhChuNhat extends HinhVuong {
 		return hv.getCanh() * getCanh2();
 	}
 
+	@Override
 	@SuppressWarnings("resource")
 	protected void Process() {
 		Scanner s = new Scanner(System.in);
