@@ -2,14 +2,15 @@ package game.java.project.home;
 
 public class NguDoc extends NhanVat {
 	String name;
-	Double money, dames, buff, ngoc;
+	Double money, dames, buff, ngoc, mau;
 
-	protected NguDoc(String name, Double money, Double dames, Double buff, Double ngoc) {
+	protected NguDoc(String name, Double money, Double dames, Double buff, Double ngoc, Double mau) {
 		this.name = name;
 		this.money = money;
 		this.dames = dames;
 		this.buff = buff;
 		this.ngoc = ngoc;
+		this.mau = mau;
 	}
 
 	@Override
@@ -70,5 +71,17 @@ public class NguDoc extends NhanVat {
 	protected Double getNgoc() {
 		// TODO Auto-generated method stub
 		return this.ngoc;
+	}
+
+	@Override
+	protected void setMau(Double mau) {
+		// TODO Auto-generated method stub
+		this.mau = mau;
+	}
+
+	@Override
+	protected Double getMau() {
+		// TODO Auto-generated method stub
+		return this.mau;
 	}
 }
