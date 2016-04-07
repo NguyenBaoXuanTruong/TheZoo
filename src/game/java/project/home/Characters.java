@@ -2,16 +2,15 @@ package game.java.project.home;
 
 public class Characters extends NPC {
 	private String name;
-	private Double money, dames, buff, ngoc, mau, type;
+	private Double money, dames, buff, ngoc, mau;
 
-	protected Characters(String name, Double money, Double dames, Double buff, Double ngoc, Double mau, Double type) {
+	protected Characters(String name, Double money, Double dames, Double buff, Double ngoc, Double mau) {
 		this.name = name;
 		this.money = money;
 		this.dames = dames;
 		this.buff = buff;
 		this.ngoc = ngoc;
 		this.mau = mau;
-		this.type = type;
 	}
 
 	@Override
@@ -88,7 +87,7 @@ public class Characters extends NPC {
 
 	/// Phan process
 	protected Double tancong() {
-		Double randomDame = (int) (Math.random() * this.getDames()) + this.getBuff();
+		Double randomDame = (int) (Math.random() * this.getDames() - 30) + this.getBuff();
 		return randomDame;
 	}
 
