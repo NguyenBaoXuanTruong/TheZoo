@@ -1,16 +1,17 @@
 package game.java.project.home;
 
-public class NguDoc extends NPC {
+public class Characters extends NPC {
 	private String name;
-	private Double money, dames, buff, ngoc, mau;
+	private Double money, dames, buff, ngoc, mau, type;
 
-	protected NguDoc(String name, Double money, Double dames, Double buff, Double ngoc, Double mau) {
+	protected Characters(String name, Double money, Double dames, Double buff, Double ngoc, Double mau, Double type) {
 		this.name = name;
 		this.money = money;
 		this.dames = dames;
 		this.buff = buff;
 		this.ngoc = ngoc;
 		this.mau = mau;
+		this.type = type;
 	}
 
 	@Override
@@ -84,7 +85,7 @@ public class NguDoc extends NPC {
 		// TODO Auto-generated method stub
 		return this.mau;
 	}
-	
+
 	/// Phan process
 	protected Double tancong() {
 		Double randomDame = (int) (Math.random() * this.getDames()) + this.getBuff();

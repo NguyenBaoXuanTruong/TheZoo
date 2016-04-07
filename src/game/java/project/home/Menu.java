@@ -67,12 +67,12 @@ public class Menu {
 			int tier2 = nhanvatMenu();
 			switch (tier2) {
 			case 1:
-				NguDoc nv1 = new NguDoc("Tom", 100.0, 10.0, 1.0, 1.0, 1000.0);
+				Characters nv1 = new Characters("Tom", 100.0, 10.0, 1.0, 1.0, 1000.0, 1.0);
 				// Phan choi cho nhan vat phu Ngu Doc
 				int tier3 = nhanvatMenu();
 				switch (tier3) {
 				case 1:
-					NguDoc nv2 = new NguDoc("Tom", 100.0, 10.0, 1.0, 1.0, 1000.0);
+					Characters nv2 = new Characters("Tom", 100.0, 10.0, 1.0, 1.0, 1000.0, 1.0);
 					// Phan action
 					int tier4 = nhanvatAction();
 					switch (tier4) {
