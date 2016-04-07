@@ -3,7 +3,8 @@ package game.java.project.home;
 import java.util.Scanner;
 
 public class Menu {
-	// The options input
+	Scanner s;
+
 	protected int Choose() {
 		System.out.println("1.Hinh chu nhat.");
 		System.out.println("2.Hinh vuong.");
@@ -12,9 +13,8 @@ public class Menu {
 		System.out.println("5.Vo Lam Truyen Ky");
 
 		System.out.print("Chon muc ban can: ");
-		Scanner s = new Scanner(System.in);
+		s = new Scanner(System.in);
 		int i = s.nextInt();
-		s.close();
 		return i;
 	}
 
@@ -25,9 +25,8 @@ public class Menu {
 		System.out.println("4.Duong Mon.");
 
 		System.out.print("Chon nhan vat ban muon: ");
-		Scanner s = new Scanner(System.in);
+		s = new Scanner(System.in);
 		int i = s.nextInt();
-		s.close();
 		return i;
 	}
 
@@ -38,9 +37,8 @@ public class Menu {
 		System.out.println("4.Ep ngoc.");
 
 		System.out.println("Chon muc ban can: ");
-		Scanner s = new Scanner(System.in);
+		s = new Scanner(System.in);
 		int i = s.nextInt();
-		s.close();
 		return i;
 	}
 
@@ -101,6 +99,12 @@ public class Menu {
 						if (nv1.getBuff() > 30)
 							nv1.setBuff(30.0);
 						System.out.println("Nhan vat da duoc buff, chi so buff hien tai la " + nv1.getBuff());
+						break;
+					case 4:
+						nv1.setNgoc(nv1.getNgoc() + 1);
+						nv1.setMoney(nv1.getMoney() - 10);
+						System.out.println("So luong ngoc hien tai la " + nv1.getNgoc() + " va tien hien tai la "
+								+ nv1.getMoney());
 						break;
 					default:
 						System.out.println("Option khong ton tai.");

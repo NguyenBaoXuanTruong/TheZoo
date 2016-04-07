@@ -5,9 +5,9 @@ public abstract class NhanVat {
 	protected abstract void setName(String name);
 
 	protected abstract String getName();
-	
+
 	protected abstract void setMau(Double mau);
-	
+
 	protected abstract Double getMau();
 
 	protected abstract void setMoney(Double money);
