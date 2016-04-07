@@ -1,8 +1,8 @@
 package game.java.project.home;
 
 public class NguDoc extends NPC {
-	String name;
-	Double money, dames, buff, ngoc, mau;
+	private String name;
+	private Double money, dames, buff, ngoc, mau;
 
 	protected NguDoc(String name, Double money, Double dames, Double buff, Double ngoc, Double mau) {
 		this.name = name;
@@ -83,5 +83,25 @@ public class NguDoc extends NPC {
 	protected Double getMau() {
 		// TODO Auto-generated method stub
 		return this.mau;
+	}
+	
+	/// Phan process
+	protected Double tancong() {
+		Double randomDame = (int) (Math.random() * this.getDames()) + this.getBuff();
+		return randomDame;
+	}
+
+	protected Double buff() {
+		Double randomBuff = (int) (Math.random() * this.getMau()) + this.getBuff();
+		this.setBuff(randomBuff);
+		if (this.getBuff() > 30.0)
+			this.setBuff(30.0);
+		return this.getBuff();
+	}
+
+	protected Double epNgoc() {
+		this.setMoney(this.getMoney() - 10);
+		this.setNgoc(this.getNgoc() + 1);
+		return this.getNgoc();
 	}
 }

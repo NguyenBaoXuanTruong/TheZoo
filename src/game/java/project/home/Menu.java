@@ -67,21 +67,21 @@ public class Menu {
 			int tier2 = nhanvatMenu();
 			switch (tier2) {
 			case 1:
-				NguDocActions nv1 = new NguDocActions();
+				NguDoc nv1 = new NguDoc("Tom", 100.0, 10.0, 1.0, 1.0, 1000.0);
 				// Phan choi cho nhan vat phu Ngu Doc
 				int tier3 = nhanvatMenu();
 				switch (tier3) {
 				case 1:
-					NguDocActions nv2 = new NguDocActions();
+					NguDoc nv2 = new NguDoc("Tom", 100.0, 10.0, 1.0, 1.0, 1000.0);
 					// Phan action
 					int tier4 = nhanvatAction();
 					switch (tier4) {
 					case 1:
-						System.out.println("Nhap ten ban muon: ");
+						System.out.print("Nhap ten ban muon: ");
 						s = new Scanner(System.in);
 						String n = s.nextLine();
-						nv1.setTen(n);
-						System.out.println("Ten nhan vat duoc doi thanh " + nv1.getTen());
+						nv1.setName(n);
+						System.out.println("Ten nhan vat duoc doi thanh " + nv1.getName());
 						break;
 					case 2:
 						Double mauNV2;
