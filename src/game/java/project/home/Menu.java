@@ -103,6 +103,7 @@ public class Menu {
 						System.out.println("Nhan vat da duoc buff, chi so buff hien tai la " + nv1.getBuff());
 						break;
 					default:
+						System.out.println("Option khong ton tai.");
 						break;
 					}
 					// ket thuc phan action
@@ -113,6 +114,7 @@ public class Menu {
 				// Ket thuc phan cho nhan vat phu Nguc Doc
 				break;
 			default:
+				System.out.println("Option khong ton tai.");
 				break;
 			}
 			// Ket thuc phan cho nhan vat chinh Ngu Doc
