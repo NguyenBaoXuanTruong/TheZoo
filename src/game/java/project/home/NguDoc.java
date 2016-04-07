@@ -1,6 +1,6 @@
 package game.java.project.home;
 
-public class NguDoc extends NhanVat {
+public class NguDoc extends NPC {
 	String name;
 	Double money, dames, buff, ngoc, mau;
 

@@ -1,6 +1,6 @@
 package game.java.project.home;
 
-public abstract class NhanVat {
+public abstract class NPC {
 
 	protected abstract void setName(String name);
 

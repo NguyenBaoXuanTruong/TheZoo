@@ -67,44 +67,40 @@ public class Menu {
 			int tier2 = nhanvatMenu();
 			switch (tier2) {
 			case 1:
-				NguDoc nv1 = new NguDoc("Tom", 100.0, 20.0, 0.0, 2.0, 1000.0);
+				NguDocActions nv1 = new NguDocActions();
 				// Phan choi cho nhan vat phu Ngu Doc
 				int tier3 = nhanvatMenu();
 				switch (tier3) {
 				case 1:
-					NguDoc nv2 = new NguDoc("Tom", 100.0, 20.0, 0.0, 2.0, 1000.0);
+					NguDocActions nv2 = new NguDocActions();
 					// Phan action
 					int tier4 = nhanvatAction();
 					switch (tier4) {
 					case 1:
 						System.out.println("Nhap ten ban muon: ");
-						Scanner s1 = new Scanner(System.in);
-						String a1 = s1.nextLine();
-						nv1.setName(a1);
-						System.out.println("Ten nhan vat duoc doi thanh " + nv1.getName());
-						s1.close();
+						s = new Scanner(System.in);
+						String n = s.nextLine();
+						nv1.setTen(n);
+						System.out.println("Ten nhan vat duoc doi thanh " + nv1.getTen());
 						break;
 					case 2:
-						Double randomDame = (int) (Math.random() * nv2.getMau()) - nv2.getBuff();
-						nv2.setMau(nv2.getMau() - randomDame - nv1.getBuff());
+						Double mauNV2;
 						if (nv2.getMau() > 0) {
-							System.out.println("Ke dich da trung don, mau hien tai con lai la " + nv2.getMau());
+							mauNV2 = nv2.getMau() - nv1.tancong() + nv2.buff();
+							nv2.setMau(mauNV2);
+							System.out.println("Ke dich tru don, mau con lai la " + nv2.getMau());
 						} else {
-							System.out.println("Ket dich da bi tieu diet.");
+							mauNV2 = 0.0;
+							nv2.setMau(mauNV2);
+							System.out.println("Ke dich da bi tieu diet, CHUC MUNG !!!");
 						}
 						break;
 					case 3:
-						Double randombuf = (int) (Math.random() * 10) + nv1.getBuff();
-						nv1.setBuff(randombuf);
-						if (nv1.getBuff() > 30)
-							nv1.setBuff(30.0);
-						System.out.println("Nhan vat da duoc buff, chi so buff hien tai la " + nv1.getBuff());
+						System.out.println("Chi so Buff cua ta la: " + nv1.buff());
 						break;
 					case 4:
-						nv1.setNgoc(nv1.getNgoc() + 1);
-						nv1.setMoney(nv1.getMoney() - 10);
-						System.out.println("So luong ngoc hien tai la " + nv1.getNgoc() + " va tien hien tai la "
-								+ nv1.getMoney());
+						System.out
+								.println("So ngoc cau ta la " + nv1.epNgoc() + " va tien con lai la " + nv1.getMoney());
 						break;
 					default:
 						System.out.println("Option khong ton tai.");
